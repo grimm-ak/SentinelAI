@@ -2,7 +2,7 @@
 
 SentinelAI is a machine-learning-powered Security Operations Center (SOC) dashboard that analyzes network traffic, detects potential attacks, and provides security analytics through a web interface and REST API.
 
-**Live Demo:** https://sentinel-ai-silk-seven.vercel.app/  
+**Live Demo:** https://sentinelai-warmup.vercel.app/
 **API:** https://sentinelai-api-dbuv.onrender.com  
 **Interactive API Documentation:** https://sentinelai-api-dbuv.onrender.com/docs  
 **Source Code:** https://github.com/grimm-ak/SentinelAI
@@ -163,6 +163,8 @@ The model repository can be configured through the `HF_MODEL_REPO` environment v
 
 ### Frontend — Vercel
 
+- **Live Demo:** https://sentinelai-warmup.vercel.app/
+- **Dashboard:** https://sentinel-ai-silk-seven.vercel.app/
 - **Root directory:** `frontend`
 - **Build command:** `npm run build`
 - **Environment variable:**
@@ -170,6 +172,8 @@ The model repository can be configured through the `HF_MODEL_REPO` environment v
 ```text
 VITE_API_URL=https://sentinelai-api-dbuv.onrender.com
 ```
+
+The Live Demo opens a separate warm-up page that checks the backend health endpoint before redirecting to the dashboard. This helps handle cold starts on Render's free tier. If the health check fails, the page offers a retry option and a direct dashboard link.
 
 ### Backend — Render
 
