@@ -2,10 +2,41 @@
 import joblib
 import pandas as pd
 
-from ml.config import BINARY_MODEL_FILE, MULTICLASS_MODEL_FILE
+from huggingface_hub import hf_hub_download
 
-binary_model = joblib.load(BINARY_MODEL_FILE)
-multiclass_model = joblib.load(MULTICLASS_MODEL_FILE)
+from ml.config import (
+    BINARY_MODEL_FILE,
+    MULTICLASS_MODEL_FILE,
+    HF_MODEL_REPO,
+)
+
+
+def load_model(filename, local_path):
+    if not local_path.exists():
+        print(f"Downloading {filename} from Hugging Face...")
+
+        downloaded_path = hf_hub_download(
+            repo_id=HF_MODEL_REPO,
+            filename=filename,
+        )
+
+        local_path.parent.mkdir(parents=True, exist_ok=True)
+
+        import shutil
+        shutil.copy2(downloaded_path, local_path)
+
+    return joblib.load(local_path)
+
+
+binary_model = load_model(
+    "binary_model.joblib",
+    BINARY_MODEL_FILE,
+)
+
+multiclass_model = load_model(
+    "multiclass_model.joblib",
+    MULTICLASS_MODEL_FILE,
+)
 
 
 def predict_traffic(records):
