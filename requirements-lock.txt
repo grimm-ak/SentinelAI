@@ -1,0 +1,14 @@
+annotated-doc==0.0.5
+click==8.5.0
+fastapi==0.142.2
+h11==0.16.0
+joblib==1.6.0
+numpy==2.5.3
+opentelemetry-api==1.45.0
+pandas==3.0.6
+pydantic==2.13.5
+scikit-learn==1.9.1
+scipy==1.18.1
+starlette==1.7.0
+typing-inspection==0.4.4
+uvicorn==0.54.0

@@ -1,5 +1,6 @@
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi import FastAPI, HTTPException
+import os
 from ml.explain import get_feature_importance
 from ml.predict import predict_traffic
 from backend.database import get_connection, initialize_database
@@ -15,11 +16,17 @@ app.add_middleware(
     allow_origins=[
         "http://localhost:5173",
         "http://127.0.0.1:5173",
+        *[
+            origin.strip()
+            for origin in os.getenv("FRONTEND_URL", "").split(",")
+            if origin.strip()
+        ],
     ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
 initialize_database()
 
 
