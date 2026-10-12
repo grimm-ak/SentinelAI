@@ -16,6 +16,7 @@ app.add_middleware(
     allow_origins=[
         "http://localhost:5173",
         "http://127.0.0.1:5173",
+        "https://sentinelai-warmup.vercel.app",
         *[
             origin.strip()
             for origin in os.getenv("FRONTEND_URL", "").split(",")
@@ -26,7 +27,6 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
 initialize_database()
 
 
