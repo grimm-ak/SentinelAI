@@ -1,0 +1,21 @@
+.venv/
+__pycache__/
+*.pyc
+
+.env
+
+.DS_Store
+
+ml/models/*.joblib
+
+data/raw/*
+data/processed/*
+
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+frontend/node_modules/
+frontend/dist/
+
+# macOS metadata files
+._*

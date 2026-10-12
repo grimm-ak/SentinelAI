@@ -1,0 +1,156 @@
+
+.explainability-panel {
+  min-width: 0;
+  overflow: hidden;
+}
+
+.explainability-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.explainability-title {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+}
+
+.explainability-title h3 {
+  margin: 5px 0;
+}
+
+.explainability-title .muted {
+  margin: 0;
+  font-size: 13px;
+}
+
+.explainability-icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(45, 212, 191, 0.25);
+  border-radius: 12px;
+  background: rgba(45, 212, 191, 0.08);
+  color: #2dd4bf;
+}
+
+.explainability-chart {
+  width: 100%;
+  min-width: 0;
+  margin: 8px 0;
+}
+
+.explainability-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 18px;
+  padding: 14px;
+  border: 1px solid #26374d;
+  border-radius: 10px;
+  background: rgba(148, 163, 184, 0.04);
+  color: #94a3b8;
+}
+
+.explainability-note svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: #2dd4bf;
+}
+
+.explainability-note p {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.explainability-message {
+  padding: 28px 12px;
+  text-align: center;
+}
+
+.explainability-error {
+  padding: 24px 12px;
+  text-align: center;
+}
+
+.explainability-error p {
+  color: #fb7185;
+}
+
+@media (max-width: 560px) {
+  .explainability-header {
+    align-items: flex-start;
+  }
+
+  .explainability-title {
+    gap: 10px;
+  }
+
+  .explainability-icon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .explainability-header .refresh-button {
+    padding: 9px;
+    font-size: 12px;
+  }
+}
+
+.explainability-chart,
+.explainability-chart:focus,
+.explainability-chart:focus-visible,
+.explainability-chart svg,
+.explainability-chart svg:focus,
+.explainability-chart svg:focus-visible {
+  outline: none !important;
+}
+
+
+.explainability-chart:focus-within {
+  outline: none !important;
+}
+
+.explainability-chart .recharts-wrapper,
+.explainability-chart .recharts-surface {
+  outline: none !important;
+}
+
+.explainability-chart .recharts-wrapper,
+.explainability-chart .recharts-wrapper:focus,
+.explainability-chart .recharts-wrapper:focus-visible,
+.explainability-chart .recharts-surface,
+.explainability-chart .recharts-surface:focus,
+.explainability-chart .recharts-surface:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+
+
+:root[data-theme="light"] .explainability-icon {
+  color: #2563eb;
+  background: #eff6ff;
+  border-color: #bfdbfe;
+}
+
+:root[data-theme="light"] .explainability-note {
+  color: #475569;
+  background: #f8fafc;
+  border-color: #dbe4ef;
+}
+
+:root[data-theme="light"] .explainability-note svg {
+  color: #2563eb;
+}
+
+:root[data-theme="light"] .explainability-error p {
+  color: #be123c;
+}

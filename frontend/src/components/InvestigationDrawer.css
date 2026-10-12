@@ -1,0 +1,339 @@
+
+.investigation-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: flex-end;
+  background: rgba(2, 6, 14, 0.72);
+  backdrop-filter: blur(4px);
+  animation: investigation-fade 160ms ease;
+}
+
+.investigation-panel {
+  width: min(470px, 100%);
+  height: 100%;
+  overflow-y: auto;
+  padding: 27px;
+  border-left: 1px solid #30435b;
+  background: #0d1727;
+  color: #e5edf7;
+  box-shadow: -20px 0 60px rgba(0, 0, 0, 0.3);
+  animation: investigation-slide 200ms ease;
+}
+
+.investigation-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 15px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid #24334a;
+}
+
+.investigation-eyebrow {
+  margin: 0 0 8px;
+  color: #6f8ba5;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+}
+
+.investigation-header h2 {
+  margin: 0;
+  font-size: 25px;
+}
+
+.investigation-close {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid #304057;
+  border-radius: 8px;
+  color: #a8b9cc;
+  background: #111f31;
+}
+
+.investigation-close:hover {
+  color: #fff;
+  border-color: #2dd4bf;
+}
+
+.investigation-result {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 23px 0;
+}
+
+.investigation-result-icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 46px;
+  height: 46px;
+  border-radius: 11px;
+}
+
+.investigation-result-icon.attack {
+  color: #fb7185;
+  background: rgba(251, 113, 133, 0.12);
+}
+
+.investigation-result-icon.normal {
+  color: #2dd4bf;
+  background: rgba(45, 212, 191, 0.1);
+}
+
+.investigation-result h3 {
+  margin: 0 0 6px;
+  font-size: 13px;
+}
+
+.investigation-result p {
+  margin: 0;
+  color: #91a3ba;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.investigation-section {
+  padding: 21px 0;
+  border-top: 1px solid #24334a;
+}
+
+.investigation-section > h3 {
+  margin: 0 0 15px;
+  font-size: 13px;
+}
+
+.investigation-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.investigation-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  min-width: 0;
+  padding: 14px;
+  border: 1px solid #26384f;
+  border-radius: 9px;
+  background: #111f31;
+}
+
+.investigation-detail > span:first-child {
+  color: #879bb3;
+  font-size: 10px;
+}
+
+.investigation-detail > strong {
+  overflow-wrap: anywhere;
+  font-size: 12px;
+}
+
+.investigation-severity {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 8px;
+  border-radius: 5px;
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.investigation-severity .severity-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.investigation-severity.high {
+  color: #fda4af;
+  background: rgba(251, 113, 133, 0.11);
+}
+
+.investigation-severity.medium {
+  color: #fcd34d;
+  background: rgba(251, 191, 36, 0.1);
+}
+
+.investigation-severity.low {
+  color: #6ee7b7;
+  background: rgba(45, 212, 191, 0.1);
+}
+
+.investigation-confidence {
+  margin-top: 15px;
+}
+
+.investigation-confidence > div:first-child {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 9px;
+  color: #91a3ba;
+  font-size: 10px;
+}
+
+.investigation-confidence strong {
+  color: #e5edf7;
+}
+
+.investigation-progress {
+  height: 5px;
+  overflow: hidden;
+  border-radius: 5px;
+  background: #29394e;
+}
+
+.investigation-progress > div {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #2dd4bf, #60a5fa);
+  transition: width 250ms ease;
+}
+
+.investigation-event {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 5px 0 17px;
+}
+
+.investigation-event-icon {
+  display: grid;
+  place-items: center;
+  width: 31px;
+  height: 31px;
+  flex-shrink: 0;
+  border: 1px solid #2b4055;
+  border-radius: 8px;
+  color: #5eead4;
+  background: #122536;
+}
+
+.investigation-event strong {
+  font-size: 11px;
+}
+
+.investigation-event p {
+  margin: 6px 0 0;
+  color: #879bb3;
+  font-size: 10px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.investigation-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 13px;
+  border: 1px solid #54462a;
+  border-radius: 9px;
+  color: #fbbf24;
+  background: rgba(251, 191, 36, 0.055);
+}
+
+.investigation-notice svg {
+  flex-shrink: 0;
+}
+
+.investigation-notice p {
+  margin: 0;
+  color: #c8bca1;
+  font-size: 10px;
+  line-height: 1.7;
+}
+
+@keyframes investigation-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes investigation-slide {
+  from { transform: translateX(20px); opacity: 0.6; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@media (max-width: 520px) {
+  .investigation-panel {
+    padding: 20px;
+  }
+}
+
+
+:root[data-theme="light"] .investigation-backdrop {
+  background: rgba(15, 23, 42, 0.35);
+}
+
+:root[data-theme="light"] .investigation-panel {
+  background: #ffffff;
+  color: #0f172a;
+  border-left-color: #dbe4ef;
+  box-shadow: -20px 0 60px rgba(15, 23, 42, 0.12);
+}
+
+:root[data-theme="light"] .investigation-header,
+:root[data-theme="light"] .investigation-section {
+  border-color: #e2e8f0;
+}
+
+:root[data-theme="light"] .investigation-eyebrow {
+  color: #64748b;
+}
+
+:root[data-theme="light"] .investigation-close {
+  color: #475569;
+  background: #f8fafc;
+  border-color: #dbe4ef;
+}
+
+:root[data-theme="light"] .investigation-close:hover {
+  color: #1d4ed8;
+  border-color: #93c5fd;
+}
+
+:root[data-theme="light"] .investigation-result p,
+:root[data-theme="light"] .investigation-confidence > div:first-child {
+  color: #64748b;
+}
+
+:root[data-theme="light"] .investigation-detail {
+  background: #f8fafc;
+  border-color: #dbe4ef;
+}
+
+:root[data-theme="light"] .investigation-detail > span:first-child {
+  color: #64748b;
+}
+
+:root[data-theme="light"] .investigation-confidence strong {
+  color: #0f172a;
+}
+
+:root[data-theme="light"] .investigation-progress {
+  background: #e2e8f0;
+}
+
+:root[data-theme="light"] .investigation-severity.high {
+  color: #be123c;
+  background: #fff1f2;
+}
+
+:root[data-theme="light"] .investigation-severity.medium {
+  color: #92400e;
+  background: #fef3c7;
+}
+
+:root[data-theme="light"] .investigation-severity.low {
+  color: #047857;
+  background: #d1fae5;
+}
