@@ -13,7 +13,7 @@ import {
 import { BrainCircuit, RefreshCw, Info } from "lucide-react";
 import "./ExplainabilityPanel.css";
 
-const API = import.meta.env.VITE_API_URL || "http://127.0.0.1:8000";
+const API = import.meta.env.VITE_API_URL || "https://sentinelai-api-dbuv.onrender.com";
 
 
 
